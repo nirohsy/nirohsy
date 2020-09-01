@@ -1,0 +1,160 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family:"DIN Alternate",
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    sans-serif;
+  color: #eeeeeeb0;
+  background: rgb(26, 25, 25);
+}
+
+#loading {
+  width: 100vw;
+  height: 100vh;
+  transition: all 1s;
+  background-color: #363b4e;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+.wait {
+  width: 100px;
+  height: 100px;
+  margin: 200px auto;
+  background-color: #fff;
+  border-radius: 100%;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+/* ローディングアニメーション */
+@keyframes sk-scaleout {
+  0% {
+    transform: scale(0);
+  } 100% {
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.logo{
+  height: 540px;
+  box-sizing: border-box;
+  position: relative;
+  text-align: center;
+  z-index:10;
+  img{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 95%;
+  &:hover{
+    top:47%;
+    transition: 800ms ease-in-out;
+    opacity: 100%;
+  }}
+}
+
+.koa{
+  .start{
+    margin: auto 24px 64px;
+    img{
+     margin-top: 12px;
+    }
+    .intro{
+      font-size: 12pt;
+      margin: 64px auto 47px;
+    }
+    .intro2{
+      margin: 45px auto 12px;
+    }
+    .bun{
+      font-size: 10pt;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+      text-align:justify;
+    }}
+  .item{
+    margin: auto 24px 120px;
+    .title{
+      display: flex;
+      justify-content: space-between;
+      .name{
+        font-size: 16pt;
+      }
+      .price{
+        font-size: 7pt;
+        text-align: right;
+        line-height: 150%;
+        margin-bottom: 12px;
+      }
+    }
+    .ge{
+      margin-bottom: 64px;
+      video{
+        width: 49%;
+      }
+    }
+  }
+  .me{
+    background: #fff;
+    color: #363b4e;
+    margin: 64px auto;
+    padding: 24px;
+    img{
+      height: 56px;
+      margin: 24px auto;
+    }
+    p{
+      font-size: 10pt;
+      text-align:justify;
+      margin: 12px auto;
+    }}
+  .shop{
+    margin: 42px 24px 64px;
+    p{
+      font-size: 20pt;
+      margin-bottom: 24px;
+    }
+    .btn{
+      border: solid 1px #757780;
+      border-radius: 30px;
+      padding: 24px 0;
+      text-align: center;
+      margin-bottom: 12px;
+    }}
+  .look{
+    margin-bottom: 64px;
+    p{
+      font-size: 20pt;
+      margin: auto 24px 24px;
+    }
+    .bar{
+      text-align: center;
+    img{
+      margin: auto auto 12px;
+    }}}
+  }
+footer{
+  .icon{
+    text-align: center;
+    margin: auto;
+    a{
+      margin: 24px;
+    }
+    img{
+      width: 20px;
+      margin-bottom: 42px;
+    }
+  }
+  .small{
+    padding: 20px;
+    text-align: center;
+  }}

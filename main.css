@@ -1,0 +1,215 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "DIN Alternate", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  color: #eeeeeeb0;
+  background: #1a1919;
+}
+
+#loading {
+  width: 100vw;
+  height: 100vh;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  background-color: #363b4e;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.wait {
+  width: 100px;
+  height: 100px;
+  margin: 200px auto;
+  background-color: #fff;
+  border-radius: 100%;
+  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+          animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+
+/* ローディングアニメーション */
+@-webkit-keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0;
+  }
+}
+@keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.logo {
+  height: 540px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  text-align: center;
+  z-index: 10;
+}
+
+.logo img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 95%;
+}
+
+.logo img:hover {
+  top: 47%;
+  -webkit-transition: 800ms ease-in-out;
+  transition: 800ms ease-in-out;
+  opacity: 100%;
+}
+
+.koa .start {
+  margin: auto 24px 64px;
+}
+
+.koa .start img {
+  margin-top: 12px;
+}
+
+.koa .start .intro {
+  font-size: 12pt;
+  margin: 64px auto 47px;
+}
+
+.koa .start .intro2 {
+  margin: 45px auto 12px;
+}
+
+.koa .start .bun {
+  font-size: 10pt;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+  text-align: justify;
+}
+
+.koa .item {
+  margin: auto 24px 120px;
+}
+
+.koa .item .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.koa .item .title .name {
+  font-size: 16pt;
+}
+
+.koa .item .title .price {
+  font-size: 7pt;
+  text-align: right;
+  line-height: 150%;
+  margin-bottom: 12px;
+}
+
+.koa .item .ge {
+  margin-bottom: 64px;
+}
+
+.koa .item .ge video {
+  width: 49%;
+}
+
+.koa .me {
+  background: #fff;
+  color: #363b4e;
+  margin: 64px auto;
+  padding: 24px;
+}
+
+.koa .me img {
+  height: 56px;
+  margin: 24px auto;
+}
+
+.koa .me p {
+  font-size: 10pt;
+  text-align: justify;
+  margin: 12px auto;
+}
+
+.koa .shop {
+  margin: 42px 24px 64px;
+}
+
+.koa .shop p {
+  font-size: 20pt;
+  margin-bottom: 24px;
+}
+
+.koa .shop .btn {
+  border: solid 1px #757780;
+  border-radius: 30px;
+  padding: 24px 0;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.koa .look {
+  margin-bottom: 64px;
+}
+
+.koa .look p {
+  font-size: 20pt;
+  margin: auto 24px 24px;
+}
+
+.koa .look .bar {
+  text-align: center;
+}
+
+.koa .look .bar img {
+  margin: auto auto 12px;
+}
+
+footer .icon {
+  text-align: center;
+  margin: auto;
+}
+
+footer .icon a {
+  margin: 24px;
+}
+
+footer .icon img {
+  width: 20px;
+  margin-bottom: 42px;
+}
+
+footer .small {
+  padding: 20px;
+  text-align: center;
+}
+/*# sourceMappingURL=main.css.map */
