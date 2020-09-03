@@ -10,7 +10,25 @@ body{
   color: #eeeeeeb0;
   background: rgb(26, 25, 25);
 }
-
+.roll{
+  margin: 100px 24px;
+a:link{
+  color: #eeeeeeb0;
+  text-decoration: none;
+}
+a:visited{
+  color: #eeeeeeb0;
+  text-decoration: overline;
+}
+a:hover{
+  background: linear-gradient(transparent 50%, yellow 50%);
+}}
+.look1{
+  background: #829BA2;
+}
+.look2{
+  background:#506583 ;
+}
 #loading {
   width: 100vw;
   height: 100vh;
@@ -42,13 +60,15 @@ body{
   opacity: 0;
   visibility: hidden;
 }
-
-.logo{
-  height: 540px;
-  box-sizing: border-box;
+.fst{
   position: relative;
+  img{
+    width: 100%;
+  }
+}
+.logo{
+  box-sizing: border-box;
   text-align: center;
-  z-index:10;
   img{
   position: absolute;
   top: 50%;
@@ -67,6 +87,7 @@ body{
     margin: auto 24px 64px;
     img{
      margin-top: 12px;
+     width: 100%;
     }
     .intro{
       font-size: 12pt;
@@ -97,9 +118,17 @@ body{
       }
     }
     .ge{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
       margin-bottom: 64px;
-      video{
+      a{
+        height: 49%;
         width: 49%;
+        margin-bottom: 2%;
+        video{
+          width: 100%;
+        }
       }
     }
   }
@@ -131,7 +160,7 @@ body{
       margin-bottom: 12px;
     }}
   .look{
-    margin-bottom: 64px;
+    margin: auto 24px 64px;
     p{
       font-size: 20pt;
       margin: auto 24px 24px;
@@ -140,6 +169,7 @@ body{
       text-align: center;
     img{
       margin: auto auto 12px;
+      width: 100%;
     }}}
   }
 footer{

@@ -10,6 +10,33 @@ body {
   background: #1a1919;
 }
 
+.roll {
+  margin: 100px 24px;
+}
+
+.roll a:link {
+  color: #eeeeeeb0;
+  text-decoration: none;
+}
+
+.roll a:visited {
+  color: #eeeeeeb0;
+  text-decoration: overline;
+}
+
+.roll a:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), color-stop(50%, yellow));
+  background: linear-gradient(transparent 50%, yellow 50%);
+}
+
+.look1 {
+  background: #829BA2;
+}
+
+.look2 {
+  background: #506583;
+}
+
 #loading {
   width: 100vw;
   height: 100vh;
@@ -61,13 +88,18 @@ body {
   visibility: hidden;
 }
 
+.fst {
+  position: relative;
+}
+
+.fst img {
+  width: 100%;
+}
+
 .logo {
-  height: 540px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  position: relative;
   text-align: center;
-  z-index: 10;
 }
 
 .logo img {
@@ -92,6 +124,7 @@ body {
 
 .koa .start img {
   margin-top: 12px;
+  width: 100%;
 }
 
 .koa .start .intro {
@@ -135,11 +168,25 @@ body {
 }
 
 .koa .item .ge {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 64px;
 }
 
-.koa .item .ge video {
+.koa .item .ge a {
+  height: 49%;
   width: 49%;
+  margin-bottom: 2%;
+}
+
+.koa .item .ge a video {
+  width: 100%;
 }
 
 .koa .me {
@@ -178,7 +225,7 @@ body {
 }
 
 .koa .look {
-  margin-bottom: 64px;
+  margin: auto 24px 64px;
 }
 
 .koa .look p {
@@ -192,6 +239,7 @@ body {
 
 .koa .look .bar img {
   margin: auto auto 12px;
+  width: 100%;
 }
 
 footer .icon {
