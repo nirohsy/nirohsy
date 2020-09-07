@@ -29,6 +29,54 @@ a:hover{
 .look2{
   background:#506583 ;
 }
+.look{
+  margin: auto 4%;
+}
+.pht{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  img{
+    width: 48%;
+    height: 100%;
+    margin-bottom: 4%;
+  }
+  .one{
+    width: 100%;
+  }}
+  .end{
+    margin-top: 100px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    img{
+      margin-bottom: 10px;
+      width: 40%;
+    }
+   }
+
+.na{
+ font-family: "Futura";
+ font-style: italic;
+ font-size: 24pt;
+ text-align: center;
+ margin: 100px auto 30px;
+}
+.koe{
+  font-family:"YuMincho +36p Kana";
+  font-size: 8px;
+  text-align: center;
+  margin-bottom: 100px;
+  a:link{
+    color: #eeeeeeb0;
+    text-decoration: none;
+  }
+  a:visited{
+    color: #eeeeeeb0;
+    text-decoration: line-through;
+  }
+}
 #loading {
   width: 100vw;
   height: 100vh;
@@ -188,3 +236,16 @@ footer{
     padding: 20px;
     text-align: center;
   }}
+
+  /* 画面外にいる状態 */
+.fadein {
+	opacity : 0.1;
+	transform : translate(0, 50px);
+	transition : all 500ms;
+	}
+
+/* 画面内に入った状態 */
+.fadein.scrollin {
+	opacity : 1;
+	transform : translate(0, 0);
+	}
