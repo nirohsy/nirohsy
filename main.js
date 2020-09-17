@@ -3,58 +3,100 @@ window.onload = function() {
   wait.classList.add('loaded');
 }
 
-window.addEventListener("DOMContentLoaded", init);
+window.addEventListener('load', init);
 
-function init() {
-  const width = 414;
-  const height = 540;
+    function init() {
 
-const renderer = new THREE.WebGLRenderer({
-    canvas: document.querySelector("#canvas")
-  });
-  renderer.setSize(width, height);
-  renderer.setPixelRatio(window.devicePixelRatio);
+      // サイズを指定 
+      const width = 414;
+      const height = 540;
+      let rot = 0;
+      let mouseX = 0;
 
-  const scene = new THREE.Scene();
+      // レンダラーを作成
+      const renderer = new THREE.WebGLRenderer({
+        canvas: document.querySelector('#canvas')
+      });
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setSize(width, height);
 
-  // new THREE.PerspectiveCamera(画角, アスペクト比, 描画開始距離, 描画終了距離)
-  const camera = new THREE.PerspectiveCamera(
-    45,
-    width / height,
-    1,
-    10000
-  );
-  camera.position.set(0, 0, +1000);
-  
-  // new THREE.BoxGeometry(幅, 高さ, 奥行き)
-const geometry = new THREE.BoxGeometry(300, 300, 300);
-const material = new THREE.MeshStandardMaterial({
-    color: 0x2060ff
-  }); 
-  // new THREE.Mesh(ジオメトリ,マテリアル)
-const box = new THREE.Mesh(geometry, material);
-scene.add(box);
+      // シーンを作成
+      const scene = new THREE.Scene();
 
-// new THREE.DirectionalLight(色)
-const directionalLight = new THREE.DirectionalLight(0xffffff);
-directionalLight.position.set(1, 1, 1);
-// シーンに追加
-scene.add(directionalLight);
+      // カメラを作成
+      const camera = new THREE.PerspectiveCamera(45, width / height);
 
-// 初回実行
-tick();
 
-function tick() {
-  requestAnimationFrame(tick);
+      // マテリアルにテクスチャーを設定
+      const material = new THREE.MeshPhongMaterial({
+        map: new THREE.TextureLoader().load('img/IMG_0011.jpg'),
+        side: THREE.Doubleside
+      });
+      const geometry = new THREE.TorusGeometry(100, 70, 30, 100);
+      const earthMesh = new THREE.Mesh(geometry, material);
+       // を作成
+          
+      scene.add(earthMesh);
+      // 星屑を作成します (カメラの動きをわかりやすくするため)
+      createStarField();
+      function createStarField() {
+        // 形状データを作成
+        const geometry = new THREE.Geometry();
+        for (let i = 0; i < 1000; i++) {
+          geometry.vertices.push(
+            new THREE.Vector3(
+              3000 * (Math.random() - 0.5),
+              3000 * (Math.random() - 0.5),
+              3000 * (Math.random() - 0.5)
+            )
+          );
+        }
+      
+      // マテリアルを作成
+      const material = new THREE.PointsMaterial({
+        size: 10,
+        color: 0xffffff
+      });
 
-  // 箱を回転させる
-  box.rotation.x += 0.01;
-  box.rotation.y += 0.01;
+      // 物体を作成
+      const mesh = new THREE.Points(geometry, material);
+      scene.add(mesh);
+      }
+      
+      // マウス座標はマウスが動いた時のみ取得できる
+      document.addEventListener('mousemove', event => {
+          mouseX = event.pageX;
+      });
 
-  // レンダリング
-  renderer.render(scene, camera);
-}
-}
+      // 平行光源
+      const directionalLight = new THREE.DirectionalLight(0xFFFFFF);
+      directionalLight.position.set(1, 1, 1);
+      scene.add(directionalLight);
+
+      tick();
+
+      // 毎フレーム時に実行されるループイベントです
+      function tick() {
+        // マウスの位置に応じて角度を設定
+          // マウスのX座標がステージの幅の何%の位置にあるか調べてそれを360度で乗算する
+          const targetRot = (mouseX / window.innerWidth) * 360;
+          // イージングの公式を用いて滑らかにする
+          // 値 += (目標値 - 現在の値) * 減速値
+          rot += (targetRot - rot) * 0.02;
+
+          // ラジアンに変換する
+          const radian = (rot * Math.PI) / 180;
+          // 角度に応じてカメラの位置を設定
+          camera.position.x = 1000 * Math.sin(radian);
+          camera.position.z = 1000 * Math.cos(radian);
+          // 原点方向を見つめる
+          camera.lookAt(new THREE.Vector3(0, 0, 0));  
+        earthMesh.rotation.y += 0.01;
+        renderer.render(scene, camera); // レンダリング 
+
+        requestAnimationFrame(tick);
+      }
+    }
 
 $(function(){
 	$(window).scroll(function (){
