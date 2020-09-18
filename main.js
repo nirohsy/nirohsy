@@ -6,7 +6,6 @@ window.onload = function() {
 window.addEventListener('load', init);
 
     function init() {
-
       // サイズを指定 
       const width = 414;
       const height = 540;
@@ -21,7 +20,7 @@ window.addEventListener('load', init);
       // シーンを作成
       const scene = new THREE.Scene();
 
-       // カメラを作成
+      // カメラを作成
       const camera = new THREE.PerspectiveCamera(45, width / height);
       // カメラの初期座標を設定
       camera.position.set(0, 0, 1000);
@@ -32,7 +31,7 @@ window.addEventListener('load', init);
 
       // マテリアルにテクスチャーを設定
       const material = new THREE.MeshPhongMaterial({
-        map: new THREE.TextureLoader().load('IMG_0015.jpg'),
+        map: new THREE.TextureLoader().load('img/IMG_0015.jpg'),
       });
       const geometry = new THREE.TorusGeometry(100, 70, 30, 100);
       const earthMesh = new THREE.Mesh(geometry, material);
@@ -53,7 +52,6 @@ window.addEventListener('load', init);
             )
           );
         }
-      
       // マテリアルを作成
       const material = new THREE.PointsMaterial({
         size: 10,
@@ -87,15 +85,3 @@ window.addEventListener('load', init);
       }
     }
 
-$(function(){
-	$(window).scroll(function (){
-		$('.fadein').each(function(){
-			var elemPos = $(this).offset().top;
-			var scroll = $(window).scrollTop();
-			var windowHeight = $(window).height();
-			if (scroll > elemPos - windowHeight + 200){
-				$(this).addClass('scrollin');
-			}
-		});
-	});
-});
