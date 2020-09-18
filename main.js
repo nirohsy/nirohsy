@@ -8,7 +8,7 @@ window.addEventListener('load', init);
     function init() {
 
       // サイズを指定 
-      const width = 414;
+      const width = 800;
       const height = 540;
       let rot = 0;
       let mouseX = 0;
@@ -23,14 +23,18 @@ window.addEventListener('load', init);
       // シーンを作成
       const scene = new THREE.Scene();
 
-      // カメラを作成
+       // カメラを作成
       const camera = new THREE.PerspectiveCamera(45, width / height);
-
+      // カメラの初期座標を設定
+      camera.position.set(0, 0, 1000);
+      const controls = new THREE.OrbitControls(camera, renderer.domElement);
+      // 滑らかにカメラコントローラーを制御する
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.2;
 
       // マテリアルにテクスチャーを設定
       const material = new THREE.MeshPhongMaterial({
-        map: new THREE.TextureLoader().load('img/IMG_0011.jpg'),
-        side: THREE.Doubleside
+        map: new THREE.TextureLoader().load('IMG_0015.jpg'),
       });
       const geometry = new THREE.TorusGeometry(100, 70, 30, 100);
       const earthMesh = new THREE.Mesh(geometry, material);
@@ -62,11 +66,6 @@ window.addEventListener('load', init);
       const mesh = new THREE.Points(geometry, material);
       scene.add(mesh);
       }
-      
-      // マウス座標はマウスが動いた時のみ取得できる
-      document.addEventListener('mousemove', event => {
-          mouseX = event.pageX;
-      });
 
       // 平行光源
       const directionalLight = new THREE.DirectionalLight(0xFFFFFF);
@@ -77,24 +76,16 @@ window.addEventListener('load', init);
 
       // 毎フレーム時に実行されるループイベントです
       function tick() {
-        // マウスの位置に応じて角度を設定
-          // マウスのX座標がステージの幅の何%の位置にあるか調べてそれを360度で乗算する
-          const targetRot = (mouseX / window.innerWidth) * 360;
-          // イージングの公式を用いて滑らかにする
-          // 値 += (目標値 - 現在の値) * 減速値
-          rot += (targetRot - rot) * 0.02;
+      // 地球は常に回転させておく
+      earthMesh.rotation.y += 0.00001;
 
-          // ラジアンに変換する
-          const radian = (rot * Math.PI) / 180;
-          // 角度に応じてカメラの位置を設定
-          camera.position.x = 1000 * Math.sin(radian);
-          camera.position.z = 1000 * Math.cos(radian);
-          // 原点方向を見つめる
-          camera.lookAt(new THREE.Vector3(0, 0, 0));  
-        earthMesh.rotation.y += 0.01;
-        renderer.render(scene, camera); // レンダリング 
+      // カメラコントローラーを更新
+      controls.update();
 
-        requestAnimationFrame(tick);
+      // レンダリング
+      renderer.render(scene, camera);
+
+      requestAnimationFrame(tick);
       }
     }
 
