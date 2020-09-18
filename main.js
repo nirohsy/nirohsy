@@ -8,10 +8,8 @@ window.addEventListener('load', init);
     function init() {
 
       // サイズを指定 
-      const width = 800;
+      const width = 414;
       const height = 540;
-      let rot = 0;
-      let mouseX = 0;
 
       // レンダラーを作成
       const renderer = new THREE.WebGLRenderer({
