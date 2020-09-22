@@ -3,11 +3,13 @@ window.onload = function() {
   wait.classList.add('loaded');
 }
 
-window.addEventListener('load', init);
+ // ページの読み込みを待つ
+    window.addEventListener('load', init);
 
     function init() {
+
       // サイズを指定 
-      const width = 414;
+      const width = 960;
       const height = 540;
 
       // レンダラーを作成
@@ -29,15 +31,15 @@ window.addEventListener('load', init);
       controls.enableDamping = true;
       controls.dampingFactor = 0.2;
 
-      // マテリアルにテクスチャーを設定
-      const material = new THREE.MeshPhongMaterial({
-        map: new THREE.TextureLoader().load('img/IMG_0015.jpg'),
+      const　gltfLoader = new THREE.GLTFLoader();
+      gltfLoader.load('img/all.glb',function(data){
+      const gltf = data;
+      const obj = gltf.scene;
+      scene.add(obj);
       });
-      const geometry = new THREE.TorusGeometry(100, 70, 30, 100);
-      const earthMesh = new THREE.Mesh(geometry, material);
-       // を作成
+      //読み込んだシーンが暗いので、明るくする
+      renderer.outputEncoding = THREE.GammaEncoding;
           
-      scene.add(earthMesh);
       // 星屑を作成します (カメラの動きをわかりやすくするため)
       createStarField();
       function createStarField() {
@@ -52,6 +54,7 @@ window.addEventListener('load', init);
             )
           );
         }
+      
       // マテリアルを作成
       const material = new THREE.PointsMaterial({
         size: 10,
@@ -68,12 +71,10 @@ window.addEventListener('load', init);
       directionalLight.position.set(1, 1, 1);
       scene.add(directionalLight);
 
-      tick();
-
       // 毎フレーム時に実行されるループイベントです
       function tick() {
       // 地球は常に回転させておく
-      earthMesh.rotation.y += 0.00001;
+      obj.rotation.y += 0.00001;
 
       // カメラコントローラーを更新
       controls.update();
@@ -84,4 +85,3 @@ window.addEventListener('load', init);
       requestAnimationFrame(tick);
       }
     }
-
