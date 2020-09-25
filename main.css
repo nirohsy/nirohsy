@@ -330,20 +330,4 @@ footer .small {
   padding: 20px;
   text-align: center;
 }
-
-/* 画面外にいる状態 */
-.fadein {
-  opacity: 0.1;
-  -webkit-transform: translate(0, 50px);
-          transform: translate(0, 50px);
-  -webkit-transition: all 500ms;
-  transition: all 500ms;
-}
-
-/* 画面内に入った状態 */
-.fadein.scrollin {
-  opacity: 1;
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-}
 /*# sourceMappingURL=main.css.map */

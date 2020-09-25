@@ -3,11 +3,8 @@ window.onload = function() {
   wait.classList.add('loaded');
 }
 
-// ページの読み込みを待つ
-    window.addEventListener('load', init);
-
+window.addEventListener('load', init);
     function init() {
-
       // サイズを指定 
       const width = 414;
       const height = 540;
@@ -33,7 +30,7 @@ window.onload = function() {
 
       // マテリアルにテクスチャーを設定
       const material = new THREE.MeshPhongMaterial({
-        map: new THREE.TextureLoader().load('img/mask1.png'),
+        map: new THREE.TextureLoader().load('img/IMG_0015.jpg'),
       });
       const geometry = new THREE.TorusGeometry(100, 70, 30, 100);
       const earthMesh = new THREE.Mesh(geometry, material);
@@ -54,7 +51,6 @@ window.onload = function() {
             )
           );
         }
-      
       // マテリアルを作成
       const material = new THREE.PointsMaterial({
         size: 10,
@@ -87,3 +83,9 @@ window.onload = function() {
       requestAnimationFrame(tick);
       }
     }
+
+    ScrollReveal().reveal('.fadein',{
+      duration: 800,
+      viewFactor: 0.2,
+      reset: true
+    });
