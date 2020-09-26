@@ -12,6 +12,9 @@ body{
 }
 .roll{
   margin: 100px 24px;
+  a:hover{
+  background: linear-gradient(transparent 50%, yellow 50%);
+}}
 a:link{
   color: #eeeeeeb0;
   text-decoration: none;
@@ -20,9 +23,7 @@ a:visited{
   color: #eeeeeeb0;
   text-decoration: overline;
 }
-a:hover{
-  background: linear-gradient(transparent 50%, yellow 50%);
-}}
+
 .look1{
   background: #829BA2;
 }

@@ -14,19 +14,19 @@ body {
   margin: 100px 24px;
 }
 
-.roll a:link {
+.roll a:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), color-stop(50%, yellow));
+  background: linear-gradient(transparent 50%, yellow 50%);
+}
+
+a:link {
   color: #eeeeeeb0;
   text-decoration: none;
 }
 
-.roll a:visited {
+a:visited {
   color: #eeeeeeb0;
   text-decoration: overline;
-}
-
-.roll a:hover {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), color-stop(50%, yellow));
-  background: linear-gradient(transparent 50%, yellow 50%);
 }
 
 .look1 {
