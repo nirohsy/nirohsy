@@ -29,9 +29,7 @@ window.addEventListener('load', init);
       controls.dampingFactor = 0.2;
 
       // マテリアルにテクスチャーを設定
-      const material = new THREE.MeshPhongMaterial({
-        map: new THREE.TextureLoader().load('img/IMG_0015.jpg'),
-      });
+      const material =new THREE.MeshNormalMaterial();
       const geometry = new THREE.TorusGeometry(100, 70, 30, 100);
       const earthMesh = new THREE.Mesh(geometry, material);
        // を作成
