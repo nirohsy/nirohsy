@@ -29,6 +29,23 @@ a:visited {
   text-decoration: overline;
 }
 
+.fst {
+  position: relative;
+}
+
+.fst img {
+  width: 100%;
+}
+
+.logo {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 .look1 {
   background: #829BA2;
 }
@@ -39,9 +56,10 @@ a:visited {
 
 .look {
   margin: auto 4%;
+  font-size: 17px;
 }
 
-.pht {
+.look .pht {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -52,17 +70,17 @@ a:visited {
       flex-wrap: wrap;
 }
 
-.pht img {
+.look .pht img {
   width: 48%;
   height: 100%;
   margin-bottom: 4%;
 }
 
-.pht .one {
+.look .pht .one {
   width: 100%;
 }
 
-.end {
+.look .end {
   margin-top: 100px;
   width: 100%;
   -webkit-box-align: center;
@@ -77,12 +95,12 @@ a:visited {
           flex-flow: column;
 }
 
-.end img {
+.look .end img {
   margin-bottom: 10px;
   width: 40%;
 }
 
-.na {
+.look .na {
   font-family: "Futura";
   font-style: italic;
   font-size: 24pt;
@@ -90,19 +108,19 @@ a:visited {
   margin: 100px auto 30px;
 }
 
-.koe {
+.look .koe {
   font-family: "YuMincho +36p Kana";
   font-size: 8px;
   text-align: center;
   margin-bottom: 100px;
 }
 
-.koe a:link {
+.look .koe a:link {
   color: #eeeeeeb0;
   text-decoration: none;
 }
 
-.koe a:visited {
+.look .koe a:visited {
   color: #eeeeeeb0;
   text-decoration: line-through;
 }
@@ -158,66 +176,37 @@ a:visited {
   visibility: hidden;
 }
 
-.fst {
-  position: relative;
-}
-
-.fst img {
-  width: 100%;
-}
-
-.logo {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  text-align: center;
-}
-
-.logo img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  opacity: 95%;
-}
-
-.logo img:hover {
-  top: 47%;
-  -webkit-transition: 800ms ease-in-out;
-  transition: 800ms ease-in-out;
-  opacity: 100%;
-}
-
-.koa .start {
+.start {
   margin: auto 24px 64px;
 }
 
-.koa .start img {
+.start img {
   margin-top: 12px;
   width: 100%;
 }
 
-.koa .start .intro {
+.start .intro {
   font-size: 12pt;
   margin: 64px auto 47px;
 }
 
-.koa .start .intro2 {
+.start .intro2 {
   margin: 45px auto 12px;
+  font-size: 25px;
 }
 
-.koa .start .bun {
+.start .bun {
   font-size: 10pt;
   margin-bottom: 12px;
   letter-spacing: 0.5px;
   text-align: justify;
 }
 
-.koa .item {
+.item {
   margin: auto 24px 120px;
 }
 
-.koa .item .title {
+.item .title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -226,18 +215,18 @@ a:visited {
           justify-content: space-between;
 }
 
-.koa .item .title .name {
+.item .title .name {
   font-size: 16pt;
 }
 
-.koa .item .title .price {
+.item .title .price {
   font-size: 7pt;
   text-align: right;
   line-height: 150%;
   margin-bottom: 12px;
 }
 
-.koa .item .ge {
+.item .ge {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -249,44 +238,44 @@ a:visited {
   margin-bottom: 64px;
 }
 
-.koa .item .ge a {
+.item .ge a {
   height: 49%;
   width: 49%;
   margin-bottom: 2%;
 }
 
-.koa .item .ge a video {
+.item .ge a video {
   width: 100%;
 }
 
-.koa .me {
+.me {
   background: #fff;
   color: #363b4e;
   margin: 64px auto;
   padding: 24px;
 }
 
-.koa .me img {
+.me img {
   height: 56px;
   margin: 24px auto;
 }
 
-.koa .me p {
+.me p {
   font-size: 10pt;
   text-align: justify;
   margin: 12px auto;
 }
 
-.koa .shop {
+.shoplink {
   margin: 42px 24px 64px;
 }
 
-.koa .shop p {
+.shoplink p {
   font-size: 20pt;
   margin-bottom: 24px;
 }
 
-.koa .shop .btn {
+.shoplink .btn {
   border: solid 1px #757780;
   border-radius: 30px;
   padding: 24px 0;
@@ -294,20 +283,20 @@ a:visited {
   margin-bottom: 12px;
 }
 
-.koa .look {
+.looklink {
   margin: auto 24px 64px;
 }
 
-.koa .look p {
+.looklink p {
   font-size: 20pt;
   margin: auto 24px 24px;
 }
 
-.koa .look .bar {
+.looklink .bar {
   text-align: center;
 }
 
-.koa .look .bar img {
+.looklink .bar img {
   margin: auto auto 12px;
   width: 100%;
 }
@@ -329,5 +318,72 @@ footer .icon img {
 footer .small {
   padding: 20px;
   text-align: center;
+}
+
+@media screen and (min-width: 500px) {
+  .fst {
+    width: 50%;
+    margin: auto;
+  }
+  #canvas {
+    margin: 40px;
+  }
+  .logo {
+    top: 300px;
+    left: 80%;
+  }
+  .logo img {
+    width: 100%;
+  }
+  .start {
+    width: 50%;
+    margin: 40px 40px 200px;
+  }
+  .item {
+    margin: 40px;
+  }
+  .item .title .price {
+    font-size: 9pt;
+  }
+  .item .ge {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .item .ge a {
+    height: 20%;
+    width: 20%;
+    margin-left: 20px;
+  }
+  .item .ge a video {
+    width: 100%;
+  }
+  .shoplink {
+    margin: 40px;
+  }
+  .shoplink .btn {
+    width: 290px;
+  }
+  .looklink {
+    margin: 40px 100px;
+  }
+  .looklink p {
+    margin-left: 0px;
+  }
+  .looklink .bar {
+    width: 320px;
+  }
+  .at {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 100px;
+  }
+  .roll {
+    margin-left: 0px;
+  }
+  .look {
+    margin: auto 300px;
+  }
 }
 /*# sourceMappingURL=main.css.map */
