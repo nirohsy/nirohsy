@@ -6,7 +6,7 @@ body{
   font-family:"DIN Alternate",
     "Hiragino Kaku Gothic ProN",
     "Hiragino Sans",
-    "sans-serif-condensed",
+    "sans-serif-condensed";
   color: #eeeeeeb0;
   background: rgb(26, 25, 25);
 }
@@ -27,6 +27,9 @@ a:visited{
   position: relative;
   img{
     width: 100%;
+  }
+  video{
+    display: none;
   }
 }
 .logo{
@@ -228,14 +231,17 @@ footer{
   }}
   @media screen and (min-width:500px){
 .fst{
-  width: 50%;
-  margin: auto;
-}
-#canvas{
-  margin: 40px;
+ display: flex;
+ video{
+   display: block;
+   height: 540px;
+ }
+ img{
+   width: 60%;
+ }
 }
  .logo{
-   top: 300px;
+   top: 80%;
    left: 80%;
   img{
     width: 100%;

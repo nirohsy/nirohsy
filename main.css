@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "DIN Alternate", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif, "sans-serif-condensed";
+  font-family: "DIN Alternate", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "sans-serif-condensed";
   color: #eeeeeeb0;
   background: #1a1919;
 }
@@ -35,6 +35,10 @@ a:visited {
 
 .fst img {
   width: 100%;
+}
+
+.fst video {
+  display: none;
 }
 
 .logo {
@@ -322,14 +326,19 @@ footer .small {
 
 @media screen and (min-width: 500px) {
   .fst {
-    width: 50%;
-    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
-  #canvas {
-    margin: 40px;
+  .fst video {
+    display: block;
+    height: 540px;
+  }
+  .fst img {
+    width: 60%;
   }
   .logo {
-    top: 300px;
+    top: 80%;
     left: 80%;
   }
   .logo img {
