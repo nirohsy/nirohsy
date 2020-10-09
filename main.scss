@@ -234,11 +234,14 @@ footer{
  display: flex;
  video{
    display: block;
-   height: 540px;
+   width: 100%;
  }
  img{
    width: 60%;
  }
+ #canvas{
+  display: none;
+}
 }
  .logo{
    top: 80%;

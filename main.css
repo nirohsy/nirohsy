@@ -332,10 +332,13 @@ footer .small {
   }
   .fst video {
     display: block;
-    height: 540px;
+    width: 100%;
   }
   .fst img {
     width: 60%;
+  }
+  .fst #canvas {
+    display: none;
   }
   .logo {
     top: 80%;
