@@ -335,7 +335,8 @@ footer .small {
     width: 100%;
   }
   .fst img {
-    width: 60%;
+    width: 20%;
+    margin: 100px auto 0px;
   }
   .fst #canvas {
     display: none;
@@ -395,7 +396,7 @@ footer .small {
     margin-left: 0px;
   }
   .look {
-    margin: auto 300px;
+    margin: auto 38%;
   }
 }
 /*# sourceMappingURL=main.css.map */
