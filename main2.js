@@ -34,7 +34,7 @@ import {GLTFLoader} from `_/three/GLTFLoader.js`;
 
 const loader = new GLTFLoader();
 
-loader.load( 'AR-all Red.glb', function ( gltf ) {
+loader.load( 'AR-allItem1.glb', function ( gltf ) {
 
 	scene.add( gltf.scene );
 
