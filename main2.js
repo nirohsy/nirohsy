@@ -4,8 +4,6 @@ window.onload = function() {
 }
 
 window.addEventListener('load', init);
-
-
  function init() {
       // サイズを指定 
       const width = 414;
@@ -30,7 +28,6 @@ window.addEventListener('load', init);
       controls.enableDamping = true;
       controls.dampingFactor = 0.2;
  
-import {GLTFLoader} from `_/three/GLTFLoader.js`;
 
 const loader = new GLTFLoader();
 
