@@ -26,7 +26,51 @@ a {
     color: #707070;
     letter-spacing: 0.12em;
 }
-
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background: #fff;
+    text-align: center;
+    font-family:"ヒラギノ角ゴシック";
+  }
+  #loading_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #loading .kvArea {
+    width: 100%;
+  }
+  #loading .kvArea .img_box {
+    text-align: center;
+  }
+  #loading .kvArea .img_box video {
+    max-width: 80%;
+    height: auto;
+  }
+  .fadeUp {
+    animation-name: fadeUpAnime;
+    animation-duration: 1.2s;
+    animation-delay: 1.2s;
+    animation-fill-mode: forwards;
+    opacity: 1;
+  }
+  @keyframes fadeUpAnime {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+  }
 
 
 
@@ -326,13 +370,15 @@ a {
     grid-template-rows: auto auto;
     padding: 30px 40px 90px;
     column-gap: 30px;
-    row-gap: 25px;
-    
+    row-gap: 25px; 
     height: 100%;
     opacity: 100%;
 }
 .page-nav figure {
     opacity: 50%;
+}
+.hover{
+    opacity: 100%;
 }
 .page-nav a{
     z-index: 2;
@@ -529,7 +575,7 @@ a {
 
     .page-nav {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: 3fr 2fr;
         grid-template-rows: 1fr 0.5fr 0.8fr;
         padding: 30px 15px;
         column-gap: 19px;
@@ -584,10 +630,6 @@ a {
     .lo01{
         grid-column: 2 / -1;
         grid-row: 1 / 2;
-    }
-    .lo01 img {
-        object-fit: cover;
-        height: 80%;
     }
     .lo02{
         grid-column: 1 / -1;
@@ -703,7 +745,6 @@ a {
         grid-column: 2 / -1 ;
         grid-row: -1;
     }
-
     .pho01-2 img {
         max-height: 323px;
     }
@@ -712,6 +753,7 @@ a {
     }
     .lo01 img {
         max-height: 300px;
+        width: 100px;
     }
     .lo04 img {
         max-height: 160px;
