@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Georgia", "YuGothic" , "Meiryo UI";
+    letter-spacing: 0.12em;
+    color: #212121;
+    background-color: #fff;
+    font-size: 12px;
+    margin: 40px 60px 100px;
+}
+
+.fadein {
+    opacity : 0;
+    transform : translate(0, 50px);
+    transition : all 1s;
+  }
+   
+  .fadein.active{
+    opacity : 1;
+    transform : translate(0, 0);
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    color: #707070;
+    letter-spacing: 0.12em;
+  }
+  ul , li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+  }
+
+  video {
+      width: 100%;
+      height: auto;
+  }
+.menu-name{
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-between;
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: 1fr calc(100vw - 300px) 1fr 0.37fr;
+    grid-template-rows: 1fr 0.37fr 1fr ;
+    position: fixed;
+    z-index: 10;
+}  
+.bk-btn {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    width: 79px;
+    height: 79px;
+    border: none;
+    background-color: transparent;
+    pointer-events: auto;
+    filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.6));
+    align-self: end;
+}
+.bk-btn.active{
+    transform: rotate(180deg);
+    transition-duration: 1.5s;
+}
+
+.top-btn{
+    grid-column: 3/ -1;
+    grid-row: 3;
+    width: 79px;
+    height: 79px;
+    border: none;
+    background-color: transparent;
+    pointer-events: auto;
+    filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.6));
+}
+.main{
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: auto auto;
+    row-gap: 33px;
+    margin-top: 90px;
+}
+.main figure {
+    margin: 0;
+}
+.main img{
+    width: 100%;
+    height: 100%;
+}
+footer p{
+    text-align: end;
+    padding: 50px 0 10px ;
+}
+
+
+/* 　　　　1042px以下の中くらいの画面で　　　　*/
+
+
+
+@media (max-width: 1042px){
+body {
+    margin: 40px 20px 100px;
+    font-size: 10px;
+}
+.nav {
+    grid-template-columns: 80px auto 80px;
+    width: 100%;
+} 
+.main {
+    margin-top: 80px;
+    row-gap: 20px;
+}
+.top-btn{
+    margin-left: -67px;
+}
+}
+
+
+
+/* 　　　　415px以下の小さい画面で　　　　*/
+
+
+@media (max-width: 415px) {
+body {
+    font-size: 8px;
+    margin: 0;
+}
+.nav {
+    display: grid;
+    grid-template-columns: 1fr calc(100vw - 200px) 1fr;
+    grid-template-rows: 1fr calc(100vh - 240px) 1fr ;
+    position: fixed;
+    z-index: 10;
+    margin: auto 20px;
+} 
+.bk-btn {
+    grid-column: 1 / 2;
+    grid-row: 3 / -1;
+} 
+.top-btn{
+    grid-column: 3/ 4;
+    grid-row: 1 / 2;
+    margin: 0;
+}
+.menu-name{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: auto auto;
+    justify-content: space-between;
+    margin: 20px;
+    row-gap: 8px;
+}
+
+.main{
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: none;
+    row-gap: 10px;
+    margin: 20px 0 90px;
+}
+
+footer p{
+    padding: 10px 20px 30px 0;
+}
+}

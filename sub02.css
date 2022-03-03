@@ -1,0 +1,35 @@
+.main figure:nth-child(9) {
+    grid-column: 1 / -1;
+    grid-row: 5 / 6;
+}
+.main figure:nth-child(10) {
+    grid-column: 1 / -1;
+    grid-row: 6 / 7 ;
+}
+.main figure:nth-child(13) {
+    grid-column: 1 / -1;
+    grid-row: 8 / 9;
+}
+.main figure:nth-child(16) {
+    grid-column: 1 / -1;
+    grid-row: 10;
+}
+
+
+@media (max-width: 1042px){
+    body {
+        font-size: 9px;
+}}
+
+
+@media (max-width: 415px){
+    body {
+        font-size: 7px;
+    }
+    .menu-name li:nth-child(5) {
+        justify-self: end;
+    }
+    .menu-name li:nth-child(6) {
+        justify-self: end;
+    }
+}

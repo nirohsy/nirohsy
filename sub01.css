@@ -1,0 +1,30 @@
+.main figure:nth-child(5) {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+}
+.main figure:nth-child(8) {
+    grid-column: 1 / -1;
+    grid-row: 5 / 6;
+}
+.main figure:nth-child(9) {
+    grid-column: 1 / -1;
+    grid-row: 6 / 7;
+}
+.main figure:nth-child(12) {
+    grid-column: 1 / -1;
+    grid-row: 8 / 9;
+}
+.main figure:nth-child(13) {
+    grid-column: 1 / -1;
+    grid-row: 9 / 10;
+}
+.main figure:nth-child(14) {
+    grid-column: 1 / -1;
+    grid-row: 11 / 12;
+}
+
+@media (max-width: 415px){
+    .menu-name li:nth-child(3) {
+        justify-self: end;
+    }
+}
