@@ -6,6 +6,7 @@ body {
     color: #212121;
     position: relative;
     background-color: #212121;
+    pointer-events: none;
 }
 .page * {
     margin: 0;
@@ -39,7 +40,7 @@ a {
     grid-template-columns: auto calc(100vw - 504px) auto;
     grid-template-rows: auto calc(100vh - 275px) auto;
     margin: 42px;
-    
+    pointer-events: none;
 }
 .menu-btn {
     grid-column: 3 / -1;
@@ -49,6 +50,7 @@ a {
     border-radius: 50%;
     background-color: whitesmoke;
     border-color: #707070;
+    pointer-events: auto;
 }
 .menu-btn.active{
     transform: rotate(180deg);
@@ -62,6 +64,7 @@ a {
     height: 79px;
     border: none;
     background-color: transparent;
+    pointer-events: auto;
 }
 
 .shop-btn{
@@ -75,6 +78,7 @@ a {
     font-size: 20pt;
     color: #707070;
     margin: 0 0 22px 20px;
+    pointer-events: auto;
 
 }
 
@@ -86,6 +90,7 @@ a {
     grid-template-rows: auto 3fr 0.8fr;
     height: 100%;
     width: 100%;
+    pointer-events: none;
 }
 .logo-t{
     grid-column: 1 / 3;
@@ -119,7 +124,7 @@ a {
     content: "";
     grid-column: 1 / -1;
     grid-row: 1 / -1;
-    border-radius: 30px;
+    border-radius: 50px;
     border: solid 3px #FF4E4E;
     z-index: -5;
 }
@@ -136,7 +141,7 @@ a {
 .back div{
     grid-column: 1 / -1;
     grid-row: 1 / -1;
-    border-radius: 30px;
+    border-radius: 50px;
     background-color: #F4E1E1;
     z-index: -5;
 }
@@ -206,6 +211,7 @@ a {
     justify-self: center;
     align-self: center;
     margin: 0 auto;
+    pointer-events: auto;
 }
 .title-ar{
     grid-column: 2 / 3 ;
@@ -246,6 +252,7 @@ a {
     text-align: justify;
     z-index: 99;
     position: absolute;
+    pointer-events: none;
 }
 .talk h2{
     font-size: 20px;
@@ -293,6 +300,9 @@ a {
     justify-content: space-between;
     column-gap: 5px;
 }
+.talk a{
+    pointer-events: auto;
+}
 .talk-shop img {
     height: 85px;
     width: auto;
@@ -306,7 +316,6 @@ a {
 
 .nav {
     display: none;
-    z-index: 100;
 }
 .topmov .topmov-s{
     display: none;
@@ -318,15 +327,15 @@ a {
     padding: 30px 40px 90px;
     column-gap: 30px;
     row-gap: 25px;
-    background-color: #212121;
+    
     height: 100%;
     opacity: 100%;
 }
-.nav figure {
+.page-nav figure {
     opacity: 50%;
 }
-.nav figure:hover {
-    opacity: 100%;
+.page-nav a{
+    z-index: 2;
 }
 
 .pho01-2 {
@@ -397,52 +406,53 @@ a {
 .lo01{
     grid-column: 3 / -1;
     grid-row: 1 / 2;
-    z-index: 2;
     justify-self: center;
     align-self: center;
     max-height: 383px;
     max-width: 159px;
+    pointer-events: auto;
 }
 
 .lo02{
     grid-column: 1 / 2;
     grid-row: 2 / -1;
-    z-index: 2;
     justify-self: center;
     align-self: center;
     max-height: 231px;
     max-width: 500px;
     padding-bottom: 50px;
+    pointer-events: auto;
 }
 .lo03{
     grid-column: 3 / -1;
     grid-row: 2 / -1;
-    z-index: 2;
     justify-self: center;
     align-self: center;
     max-height: 471px;
     max-width: 328px;
+    pointer-events: auto;
 }
 .lo04{
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    z-index: 2;
     justify-self: center;
     align-self: center;
     max-height: 396px;
     max-width: 288px;
+    pointer-events: auto;
 }
 .lo05{
     grid-column: 2 / 3;
     grid-row: 1 / -1;
-    z-index: 2;
     justify-self: center;
     align-self: center;
     max-height: 756px;
     max-width: 245px;
+    pointer-events: auto;
 }
 .lo05-2 {
     display: none;
+    pointer-events: auto;
 }
 
 
@@ -601,7 +611,6 @@ a {
         display: block;
         grid-column: 1 / 2;
         grid-row: 1 / 2;
-        z-index: 2;
         justify-self: center;
         align-self: center;
     }
