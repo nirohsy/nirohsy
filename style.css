@@ -638,12 +638,18 @@ a {
 
 
 @media (max-width: 415px) {
+    .logo-t img{
+        justify-self: center;
+        margin: 15px auto;
+    }
     .logo-l {
         width: 30px;
+        height: 300px;
     }
     .logo-r {
         width: 30px;
         justify-self: end;
+        height: 300px;
     }
     .topmov {
         display: none;
@@ -658,6 +664,7 @@ a {
         opacity: 70%;
         align-self: center;
         margin-top: 0px;
+        margin-bottom: 50px;
     }
     .topmov-s video {
         margin-top: -200px;
