@@ -130,7 +130,7 @@ a {
     position: fixed;
     grid-template-columns: auto;
     grid-row: 1fr;
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 .back div{
