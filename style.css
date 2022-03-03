@@ -638,17 +638,25 @@ a {
 
 
 @media (max-width: 415px) {
-    .logo-t img{
+    .logo-t{
+        grid-column: 1 / -1;
         justify-self: center;
+    }
+    .logo-t img{
         margin: 15px auto;
+        width: 102%;
     }
     .logo-l {
         width: 30px;
-        height: 300px;
     }
     .logo-r {
         width: 30px;
         justify-self: end;
+    }
+    .logo-l img{
+        height: 300px;
+    }
+    .logo-r img{
         height: 300px;
     }
     .topmov {
