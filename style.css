@@ -1,0 +1,704 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Georgia", "YuGothic" , "Meiryo UI";
+    letter-spacing: 0.12em;
+    color: #212121;
+    position: relative;
+    background-color: #212121;
+}
+.page * {
+    margin: 0;
+}
+.page img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+.page video {
+    width: 100%;
+    vertical-align: middle;
+}
+a {
+    display: block;
+    text-decoration: none;
+    color: #707070;
+    letter-spacing: 0.12em;
+}
+
+
+
+
+/*   　　　　上に乗っけるパーツ/下に敷くやつ　　　　　*/
+
+
+.menu {
+    position: fixed;
+    z-index: 105;
+    display: grid;
+    grid-template-columns: auto calc(100vw - 504px) auto;
+    grid-template-rows: auto calc(100vh - 275px) auto;
+    margin: 42px;
+    
+}
+.menu-btn {
+    grid-column: 3 / -1;
+    grid-row: 1 / 2;
+    width: 79px;
+    height: 79px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    border-color: #707070;
+}
+.menu-btn.active{
+    transform: rotate(180deg);
+    transition-duration: 1.5s;
+}
+
+.share_btn{
+    grid-column: 3 / -1;
+    grid-row: 3/ -1;
+    width: 79px;
+    height: 79px;
+    border: none;
+    background-color: transparent;
+}
+
+.shop-btn{
+    grid-column: 1 / 2;
+    grid-row: 3 / -1;
+    width: 308px;
+    height: 78px;
+    border-radius: 50px;
+    border-color: #707070;
+    background-color: #84FF74;
+    font-size: 20pt;
+    color: #707070;
+    margin: 0 0 22px 20px;
+
+}
+
+.logo{
+    display: grid;
+    z-index: 5;
+    position: fixed;
+    grid-template-columns: 1fr calc(100vw - 115px) 1fr;
+    grid-template-rows: auto 3fr 0.8fr;
+    height: 100%;
+    width: 100%;
+}
+.logo-t{
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+}
+.logo-r{
+    grid-column: 3 / -1;
+    grid-row: 2 / 3;
+}
+.logo-l{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+.logo-t img{
+    max-width: 517px;
+    margin: 15px 0;
+}
+.logo-r img{
+    margin-left: 40%;
+    margin-top: 30px;
+    width: 100%;
+    height: 90%;
+}
+.logo-l img{
+    margin-left: -40%;
+    margin-top: 30px;
+    height: 90%;
+}
+
+.logo::after{
+    content: "";
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    border-radius: 30px;
+    border: solid 3px #FF4E4E;
+    z-index: -5;
+}
+
+.back{
+    display: grid;
+    z-index: -100;
+    position: fixed;
+    grid-template-columns: auto;
+    grid-row: 1fr;
+    height: 100vh;
+    width: 100%;
+}
+.back div{
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    border-radius: 30px;
+    background-color: #F4E1E1;
+    z-index: -5;
+}
+.back::after{
+    content: "";
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    background-color: #EA90D8;
+    z-index: -6;
+}
+
+
+
+/*   　　　　たくさんのアイテム一覧　＋　トップ動画　　　　　*/
+
+
+.page-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-flow: row;
+    row-gap: 50px;
+    justify-content: space-evenly;
+    column-gap: 50px;
+    margin: 0 100px;
+}
+
+.page-main li{
+    list-style: none; 
+    font-size: 8px;
+    margin: 0;
+}
+.page-main div{
+    justify-self: center;
+    align-self: center;
+}
+.page-main ul{
+    margin: 0;
+    background-color: white;
+    clip-path: url(#clipshape02);
+    display: grid;
+    grid-template-columns: 2fr 7fr auto auto;
+    grid-template-rows: 2.5fr auto 1fr ;
+    padding: 125px 10% 53px ;
+}
+.topmov{
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    justify-self: center;
+    align-self: center;
+    object-fit: cover;
+    clip-path: ellipse(48% 40% at 50% 0%);
+    width: 100vw;
+    opacity: 70%;
+    margin-bottom: -15%;
+}
+.topmov-s {
+    display: none;
+}
+.topmov video {
+    margin-top: -270px;
+}
+
+
+.title-vid{
+    grid-column: 1 / -1 ;
+    grid-row: 2 / 3;
+    justify-self: center;
+    align-self: center;
+    margin: 0 auto;
+}
+.title-ar{
+    grid-column: 2 / 3 ;
+    grid-row: 1 / 2;
+    font-size: 42px;
+}
+.title-1{
+    grid-column: 1 / 2 ;
+    grid-row: 3 / -1;
+}
+.title-2{
+    grid-column: 2 / 3 ;
+    grid-row: 3 / -1;
+}
+.title-3{
+    grid-column: 2 / 3 ;
+    grid-row: -1;
+}
+.title-4{
+    grid-column: 4 / -1 ;
+    grid-row: 3 / -1;
+    justify-self: end;
+}
+
+
+
+
+/*   　　　　語り部屋　その他ショップページへのリンク　　　　　　*/
+
+
+.talk{
+    background: #707070;
+    color: #F4E1E1;
+    margin-top: 165px;
+    padding: 155px 160px 118px;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: justify;
+    z-index: 99;
+    position: absolute;
+}
+.talk h2{
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "ヒラギノ角ゴシック" ;
+}
+.talk-01 h2 {
+    margin-bottom: 40px;
+}
+.talk-02 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat( 4, auto) 390px ;
+    row-gap: 40px;
+    margin-top: 200px;
+}
+.talk-s01{
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+}
+.talk-s02{
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+}
+.talk-s03{
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+}
+.talk-s04{
+    grid-column: 1 / -1;
+    grid-row: 4 / 5;
+}
+
+.talk-shop {
+    grid-column: 2 / -1;
+    grid-row: 5 / -1;
+    align-self: center;
+}
+.talk ul{
+    display: grid;
+    grid-auto-flow: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    justify-content: space-between;
+    column-gap: 5px;
+}
+.talk-shop img {
+    height: 85px;
+    width: auto;
+}
+
+
+
+/*   　　　　ナビ　写真ページへのリンク室　　　　　　*/
+
+
+
+.nav {
+    display: none;
+    z-index: 100;
+}
+.topmov .topmov-s{
+    display: none;
+}
+.page-nav {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    padding: 30px 40px 90px;
+    column-gap: 30px;
+    row-gap: 25px;
+    background-color: #212121;
+    height: 100%;
+    opacity: 100%;
+}
+.nav figure {
+    opacity: 50%;
+}
+.nav figure:hover {
+    opacity: 100%;
+}
+
+.pho01-2 {
+    display: none
+}
+.pho01 {
+    grid-column: 3 / -1;
+    grid-row: 1 / 2;
+}
+.pho02-2 {
+    display: none;
+}
+.pho02 {
+    grid-column: 1 / 2;
+    grid-row: 2 / -1;
+}
+.pho03 {
+    grid-column: 3 / -1;
+    grid-row: 2 / -1;
+}
+.pho04 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+.pho05 {
+    grid-column: 2 / 3;
+    grid-row: 1 / -1;
+}
+
+.pho01 img {
+    height: 100%;
+    object-fit: cover;
+    max-height: 409px;
+    clip-path: border-box;
+    border-radius:20px;
+}
+
+.pho02 img {
+    height: 100%;
+    object-fit: cover;
+    max-height: 500px;
+    clip-path: border-box;
+    border-radius:0px 200px 0px 0px;
+}
+
+.pho03 img {
+    height: 100%;
+    object-fit: cover;
+    max-height: 511px;
+    clip-path: ellipse(45% 50%);
+}
+
+.pho04 img {
+    height: 100%;
+    object-fit: cover;
+    max-height: 435px;
+    clip-path: border-box;
+    border-radius:20px
+}
+
+.pho05 img{
+    height: 100%;
+    object-fit: cover;
+    max-height: 950px;
+    clip-path: url(#clipshape);
+}
+
+.lo01{
+    grid-column: 3 / -1;
+    grid-row: 1 / 2;
+    z-index: 2;
+    justify-self: center;
+    align-self: center;
+    max-height: 383px;
+    max-width: 159px;
+}
+
+.lo02{
+    grid-column: 1 / 2;
+    grid-row: 2 / -1;
+    z-index: 2;
+    justify-self: center;
+    align-self: center;
+    max-height: 231px;
+    max-width: 500px;
+    padding-bottom: 50px;
+}
+.lo03{
+    grid-column: 3 / -1;
+    grid-row: 2 / -1;
+    z-index: 2;
+    justify-self: center;
+    align-self: center;
+    max-height: 471px;
+    max-width: 328px;
+}
+.lo04{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    z-index: 2;
+    justify-self: center;
+    align-self: center;
+    max-height: 396px;
+    max-width: 288px;
+}
+.lo05{
+    grid-column: 2 / 3;
+    grid-row: 1 / -1;
+    z-index: 2;
+    justify-self: center;
+    align-self: center;
+    max-height: 756px;
+    max-width: 245px;
+}
+.lo05-2 {
+    display: none;
+}
+
+
+
+.footer{
+    align-self: center;
+    text-align: center;
+    color: #F4E1E1;
+}
+
+
+/* 　　　　1042px以下の中くらいの画面で　　　　*/
+
+
+
+@media (max-width: 1042px) {
+    .logo-r img{
+        margin-left: 0;
+        height: 400px;
+    }
+    .logo-l img{
+        margin-left: 0;
+        height: 400px;
+    }
+
+    .page-main {
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        grid-auto-rows: 375px;
+        row-gap: 250px;
+        column-gap: 15px;
+    }
+    .page-main ul{
+        padding: 70px 30px 40px ;
+        font-size: 5px;
+    }
+    .topmov {
+        clip-path: url(#clipshape03);
+        margin-bottom: 0px;
+    }
+    .topmov video {
+        margin-top: 0px;
+    }
+
+    .menu {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        column-gap: calc(100vw - 364px);
+        row-gap: calc(100vh - 198px);
+        margin: 20px;
+    }
+    .menu-btn {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        width: 79px;
+        height: 79px;
+    }
+    .share_btn {
+        grid-column: 2 / -1;
+        grid-row: 2 / -1;
+        width: 79px;
+        height: 79px;
+    }
+    .shop-btn{
+        grid-column: 1 / 2;
+        grid-row: 2 / -1;
+        width: 225px;
+        height: 60px;
+    }
+
+    
+
+
+    .page-nav {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: 1fr 0.5fr 0.8fr;
+        padding: 30px 15px;
+        column-gap: 19px;
+        row-gap: 19px;
+    }
+    .pho01-2 {
+        display: block;
+        grid-column: 2 / -1;
+        grid-row: 1 / 2;
+    }
+    .pho01 {
+        display: none;
+    }
+    .pho02-2 {
+        display: block;
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+    }
+    .pho02 {
+        display: none;
+    }
+    .pho03 {
+        grid-column: 2 / -1;
+        grid-row: 3 / -1;
+    }
+    .pho04 {
+        grid-column: 1 / 2;
+        grid-row: 3 / -1;
+    }
+    .pho05 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    .pho01-2 img {
+        object-fit: cover;
+        clip-path: border-box;
+        border-radius: 20px;
+        max-height: 500px;
+        width: 100%;
+
+    }
+    .pho02-2 img {
+        object-fit: cover;
+        max-height: 260px;
+        clip-path: border-box;
+        border-radius:0px 200px 0px 0px;
+    }
+    .pho05 img{
+        clip-path: url(#clipshape02);
+        max-height: 500px;
+    }
+    .lo01{
+        grid-column: 2 / -1;
+        grid-row: 1 / 2;
+    }
+    .lo01 img {
+        object-fit: cover;
+        height: 80%;
+    }
+    .lo02{
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;
+        width: 80%;
+        margin: auto 0;
+        padding-bottom: 0;
+    }
+    .lo03{
+        grid-column: 2 / -1;
+        grid-row: 3 / -1;
+    }
+    .lo04{
+        grid-column: 1 / 2;
+        grid-row: 3 / -1;
+    }
+    .lo05{
+        display: none;
+    }
+    .lo05-2{
+        display: block;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        z-index: 2;
+        justify-self: center;
+        align-self: center;
+    }
+    .lo05-2 img{
+        height: 100px;
+        width: 100px;
+    }
+    .talk{
+        padding: 155px 80px 118px;
+        font-size: 10px;
+    }
+    .talk-shop {
+        grid-column: 1 / -1;
+        grid-row: 5 / -1;
+        justify-content: end;
+    }
+    .talk-shop img {
+        height: 65px;
+    }
+}
+
+
+
+/* 　　　　415px以下の小さい画面で　　　　*/
+
+
+@media (max-width: 415px) {
+    .logo-l {
+        width: 30px;
+    }
+    .logo-r {
+        width: 30px;
+        justify-self: end;
+    }
+    .topmov {
+        display: none;
+    }
+    .topmov-s {
+        display: block;
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        justify-self: center;
+        clip-path: url(#clipshape03);
+        width: 100%;
+        opacity: 70%;
+        align-self: center;
+        margin-top: 0px;
+    }
+    .topmov-s video {
+        margin-top: -200px;
+    }
+    .title-vid video{
+        width: 144px;
+    }
+    .page-main{
+        row-gap: 30px;
+        column-gap: 0px;
+    }
+    .page-main ul{
+        padding: 40px 15px 20px;
+        grid-template-columns: 3fr 7fr;
+        grid-template-rows: 2.5fr auto 1fr 1fr;
+        column-gap: 5px;
+        margin: 0 7px;
+    }
+    .title-2{
+        grid-column: 2 / -1 ;
+        grid-row: 3;
+    }
+    .title-3{
+        grid-column: 2 / -1 ;
+        grid-row: 4;
+    }
+    .title-4{
+        grid-column: 2 / -1 ;
+        grid-row: -1;
+    }
+
+    .pho01-2 img {
+        max-height: 323px;
+    }
+    .pho05 img {
+        max-height: 323px;
+    }
+    .lo01 img {
+        max-height: 300px;
+    }
+    .lo04 img {
+        max-height: 160px;
+    }
+    .talk {
+        padding:155px 20px 118px ;
+    }
+    .talk h2 {
+        font-size: 13px;
+    }
+    .talk-shop img {
+        height: 37px;
+    }
+}
