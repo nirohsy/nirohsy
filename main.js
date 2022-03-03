@@ -4,7 +4,7 @@ $(window).on('load',function(){
     $("#loading_box").delay(1200).fadeOut('slow');//ローディング画像を1.2秒（1200ms）待機してからフェードアウト
   });
 
-  
+
 
 $('.menu-btn').on('click',function(){
     $('.menu-btn').toggleClass('active');
@@ -64,4 +64,25 @@ $('.lo04').click(function() {
 });
 $('.lo05 , lo05-2').click(function() {
     $('.pho05').css('opacity' , '100%');
+});
+
+
+$(function(){
+    $(window).scroll(function (){
+        $('.fadein').each(function(){
+            var position = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (scroll > position - windowHeight + 200){
+              $(this).addClass('active');
+            }
+        });
+    });
+});
+
+$('.bk-btn').on('click',function(){
+    $('.bk-btn').toggleClass('active');
+});
+$('.top-btn').on('click',function(){
+    $('html,body').animate({scrollTop:0}, 'fast');
 });
