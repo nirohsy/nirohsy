@@ -31,7 +31,12 @@ body {
       margin: 0;
       padding: 0;
   }
-
+img{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
   video {
       width: 100%;
       height: auto;
@@ -58,7 +63,6 @@ body {
     background-color: transparent;
     pointer-events: auto;
     filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.6));
-    align-self: end;
 }
 .bk-btn.active{
     transform: rotate(180deg);
@@ -133,7 +137,7 @@ body {
     grid-template-rows: 1fr calc(100vh - 240px) 1fr ;
     position: fixed;
     z-index: 10;
-    margin: auto 20px;
+    margin: 0;
 } 
 .bk-btn {
     grid-column: 1 / 2;
@@ -142,7 +146,7 @@ body {
 .top-btn{
     grid-column: 3/ 4;
     grid-row: 1 / 2;
-    margin: 0;
+    margin: 10px auto 0;
 }
 .menu-name{
     display: grid;
