@@ -37,6 +37,7 @@ a {
     background: #fff;
     text-align: center;
     font-family:"ヒラギノ角ゴシック";
+    color: #707070;
   }
   #loading_box {
     position: absolute;
@@ -50,7 +51,7 @@ a {
   #loading .kvArea .img_box {
     text-align: center;
   }
-  #loading .kvArea .img_box video {
+  #loading .kvArea .img_box img {
     max-width: 250px;
     height: auto;
   }
